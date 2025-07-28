@@ -1,0 +1,94 @@
+{
+  "people": [
+    {
+      "id": 1,
+      "name": "Luke Skywalker",
+      "height": 172,
+      "mass": 77,
+      "gender": "male"
+    },
+    {
+      "id": 2,
+      "name": "Darth Vader",
+      "height": 202,
+      "mass": 136,
+      "gender": "male"
+    },
+    {
+      "id": 3,
+      "name": "Leia Organa",
+      "height": 150,
+      "mass": 49,
+      "gender": "female"
+    },
+    {
+      "id": 4,
+      "name": "Obi-Wan Kenobi",
+      "height": 182,
+      "mass": 77,
+      "gender": "male"
+    }
+  ],
+  "starships": [
+    {
+      "id": 1,
+      "name": "X-wing",
+      "crew": 1,
+      "model": "T-65 X-wing",
+      "manufacturer": "Incom Corporation"
+    },
+    {
+      "id": 2,
+      "name": "Imperial Star Destroyer",
+      "crew": 47060,
+      "model": "Imperial I-class Star Destroyer",
+      "manufacturer": "Kuat Drive Yards"
+    },
+    {
+      "id": 3,
+      "name": "Millennium Falcon",
+      "crew": 4,
+      "model": "YT-1300 light freighter",
+      "manufacturer": "Corellian Engineering Corporation"
+    },
+    {
+      "id": 4,
+      "name": "TIE Fighter",
+      "crew": 1,
+      "model": "Twin Ion Engine starfighter",
+      "manufacturer": "Sienar Fleet Systems"
+    }
+  ],
+  "testUser": {
+    "name": "Test Character",
+    "height": 180,
+    "mass": 80,
+    "gender": "other"
+  },
+  "testStarship": {
+    "name": "Test Ship",
+    "crew": 10,
+    "model": "Test Model",
+    "manufacturer": "Test Manufacturer"
+  },
+  "battleScenarios": [
+    {
+      "type": "people",
+      "leftCard": { "name": "Luke Skywalker", "mass": 77 },
+      "rightCard": { "name": "Darth Vader", "mass": 136 },
+      "expectedWinner": "Right card wins!"
+    },
+    {
+      "type": "starships", 
+      "leftCard": { "name": "X-wing", "crew": 1 },
+      "rightCard": { "name": "Imperial Star Destroyer", "crew": 47060 },
+      "expectedWinner": "Right card wins!"
+    },
+    {
+      "type": "people",
+      "leftCard": { "name": "Character A", "mass": 80 },
+      "rightCard": { "name": "Character B", "mass": 80 },
+      "expectedWinner": "It's a draw!"
+    }
+  ]
+} 
