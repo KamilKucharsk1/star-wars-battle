@@ -39,17 +39,17 @@ This document outlines the comprehensive testing strategy for the Star Wars Batt
 
 **Run:** `npm run test -- --testPathPattern=battle-logic.test.ts`
 
-### 2. **Component Tests** (`src/components/__tests__/ResourceList.test.tsx`) - **WORKING**
+### 2. **Component Tests** (`src/components/__tests__/ResourceList.test.tsx`) - **PLANNED**
 
-**Scope:** Component rendering and independence validation
+**Scope:** Component rendering and independence validation (Infrastructure Ready)
 
-**Key Tests:**
-- ✅ Resource list interface rendering
-- ✅ Tab switching between resource types
-- ✅ Loading and error states
-- ✅ Independence from external state changes
+**Planned Tests:**
+- 🔧 Resource list interface rendering
+- 🔧 Tab switching between resource types
+- 🔧 Loading and error states
+- 🔧 Independence from external state changes
 
-**Run:** `npm run test -- --testPathPattern=ResourceList.test.ts`
+**Note:** Test infrastructure is ready, but component tests need to be implemented
 
 ### 3. **Cypress E2E Tests** (`cypress/e2e/battle-system.cy.ts`) - **COMPLETE & WORKING**
 
@@ -104,10 +104,10 @@ The following test infrastructure is in place and ready for use:
 
 ### ✅ Fully Working
 1. **Battle Logic** - Core business logic tests (13/13 passing)
-2. **Basic Component** - Resource list component tests (working)
-3. **E2E Tests** - Complete Cypress battle system (16/16 passing)
+2. **E2E Tests** - Complete Cypress battle system (16/16 passing)
 
 ### 🔧 In Development  
+3. **Component Tests** - React component testing (infrastructure ready)
 4. **Performance Tests** - React optimization validation (infrastructure ready)
 5. **Integration Tests** - API and database tests (complex mocking needed)
 
@@ -141,11 +141,11 @@ From PRD Section 5 (Tests):
 # Battle logic (13 tests passing)
 npm run test -- --testPathPattern=battle-logic.test.ts
 
-# Component tests (basic functionality)  
-npm run test -- --testPathPattern=ResourceList.test.ts
+# Currently only battle logic tests exist
+# npm run test -- --testPathPattern=ResourceList.test.ts  (not implemented yet)
 
-# All unit tests together
-npm run test -- --testPathPattern="battle-logic|ResourceList"
+# All working unit tests
+npm run test -- --testPathPattern=battle-logic
 
 # Cypress E2E tests (16 comprehensive scenarios)
 npm run cypress:open    # Interactive mode
@@ -199,7 +199,7 @@ cypress/
 
 ```
 ✅ Battle Logic: 13/13 tests passing (100%)
-✅ Component Tests: 6/7 tests passing (basic functionality)
+🔧 Component Tests: Infrastructure ready (test file planned but not implemented)
 ✅ Cypress E2E: 16/16 comprehensive scenarios passing (100%)
    - Complete battle workflows ✅
    - Mobile responsiveness ✅
