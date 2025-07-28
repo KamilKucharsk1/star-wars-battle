@@ -17,9 +17,7 @@ export const typeDefs = gql`
   type Person {
     id: ID!
     name: String!
-    height: Int!
     mass: Int!
-    gender: String!
   }
 
   type Starship {

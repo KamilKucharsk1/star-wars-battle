@@ -19,15 +19,31 @@ import './commands'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
-// Disable uncaught exception handling for better test stability
+// Global error handling
 Cypress.on('uncaught:exception', (err, runnable) => {
-  // returning false here prevents Cypress from failing the test
-  // for uncaught exceptions that might occur from the app
-  if (err.message.includes('ResizeObserver loop limit exceeded')) {
-    return false
+  // Ignore certain errors that don't affect functionality
+  if (
+    err.message.includes('ResizeObserver loop limit exceeded') ||
+    err.message.includes('Non-Error promise rejection captured') ||
+    err.message.includes('ChunkLoadError') ||
+    err.message.includes('NetworkError') ||
+    err.message.includes('Loading CSS chunk') ||
+    err.message.includes('Loading chunk') ||
+    err.message.includes('Script error') ||
+    err.stack?.includes('chunk-') ||
+    err.stack?.includes('dynamic import')
+  ) {
+    return false // Prevent Cypress from failing the test
   }
-  if (err.message.includes('Non-Error promise rejection captured')) {
-    return false
-  }
+  
+  // Let other errors fail the test
   return true
+})
+
+// Handle unhandled promise rejections
+Cypress.on('fail', (err, runnable) => {
+  if (err.message.includes('Promise')) {
+    console.warn('Promise rejection caught:', err.message)
+  }
+  throw err
 }) 

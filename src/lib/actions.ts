@@ -5,18 +5,13 @@ import { db } from "@/db";
 import { people, starships } from "@/db/schema";
 import { eq } from "drizzle-orm";
 
-// People Actions
 export async function createPerson(data: {
   name: string;
-  height?: number;
   mass: number;
-  gender?: string;
 }) {
   await db.insert(people).values({
     name: data.name,
-    height: data.height || null,
     mass: data.mass,
-    gender: data.gender || null,
   });
   revalidatePath("/");
 }
@@ -31,9 +26,18 @@ export async function deletePerson(id: number) {
   revalidatePath("/");
 }
 
-// Starship Actions
-export async function createStarship(data: typeof starships.$inferInsert) {
-  await db.insert(starships).values(data);
+export async function createStarship(data: {
+  name: string;
+  crew: number;
+  model: string;
+  manufacturer: string;
+}) {
+  await db.insert(starships).values({
+    name: data.name,
+    crew: data.crew,
+    model: data.model,
+    manufacturer: data.manufacturer,
+  });
   revalidatePath("/");
 }
 

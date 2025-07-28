@@ -30,7 +30,7 @@ async function fetcher(query: string) {
 const resourceTypes = ["people", "starships"];
 
 const fields: { [key: string]: string } = {
-  people: "id name height mass gender",
+  people: "id name mass",
   starships: "id name crew model manufacturer",
   vehicles: "id name model manufacturer",
   species: "id name language",
@@ -42,9 +42,11 @@ export function ResourceList() {
   const [selectedResource, setSelectedResource] = useState<Resource | null>(null);
 
   const { data, isLoading, error } = useQuery<QueryData>({
-    queryKey: [selectedCategory],
+    queryKey: [selectedCategory], 
     queryFn: () =>
       fetcher(`query { ${selectedCategory} { ${fields[selectedCategory]} } }`),
+    staleTime: 0, 
+    refetchOnWindowFocus: true, 
   });
 
   const handleCategoryChange = (

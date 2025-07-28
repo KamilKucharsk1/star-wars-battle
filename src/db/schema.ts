@@ -3,9 +3,7 @@ import { sqliteTable, text, integer } from "drizzle-orm/sqlite-core";
 export const people = sqliteTable("people", {
   id: integer("id").primaryKey(),
   name: text("name").notNull(),
-  height: integer("height"),
   mass: integer("mass").notNull(),
-  gender: text("gender"),
 });
 
 export const starships = sqliteTable("starships", {

@@ -3,7 +3,6 @@
 ## 1. Cel projektu  
 Stworzyć aplikację "Star Wars Battle", która pozwala losować dwie karty (osoby lub statki kosmiczne) i wyłaniać zwycięzcę na podstawie wspólnej cechy (masa vs. liczba członków załogi).
 
-
 ---
 
 ## 2. Zakres funkcjonalny
@@ -207,12 +206,6 @@ sx={{
 8. **Database integration** - SQLite z Drizzle ORM
 9. **📱 Mobile Responsiveness** - pełna responsywność na wszystkich urządzeniach
 
-### 🔄 Możliwe rozszerzenia (future scope)
-1. **Deployment na Vercel** z PostgreSQL
-2. **Pagination** w zapytaniach GraphQL
-3. **Dodatkowe atrybuty** w kartach bitwy
-4. **Animacje** przejść między kartami
-5. **PWA features** dla lepszego mobile experience
 
 ---
 
